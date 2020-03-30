@@ -5,30 +5,54 @@
   justify-content: center;
   align-items: center;
 }
-.main {
+.box {
+  display: flex;
   width: 400px;
   height: 400px;
   box-shadow: 6px 6px 14px #666;
   border-radius: 20px;
-  padding: 50px;
+  padding: 20px;
   background-color: white;
-  display: flex;
   flex-direction: column;
 }
+.header {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.category {
+  flex: 1;
+
+  justify-content: center;
+  align-items: center;
+}
 .btns {
-  margin: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-end;
 }
 .btn {
   height: 70px;
-  width: 200px;
+  width: 150px;
   margin: 10px;
-  background-color: tomato;
   border-radius: 15px;
   color: white;
   font-size: 20px;
 }
-.category {
-  margin-top: 10px;
+.option-btn {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  /* margin: auto; */
+}
+.my-btn {
+  height: 50px;
+  width: 320px;
+  border-radius: 5px;
+  margin: auto;
+  background-color: white;
 }
 #class {
   margin: 10px;

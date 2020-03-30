@@ -1,0 +1,29 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+#paper {
+  margin: 10px;
+  border: 1px solid black;
+}
+
+#header {
+  border-bottom: 1px solid black;
+  /* margin: 20px; */
+}
+#title {
+  background-color: black;
+  color: white;
+}
+#sub-title {
+  display: flex;
+  flex-direction: row;
+  /* align-content: space-around; */
+  justify-content: space-around;
+}
+#content {
+  text-align: left;
+}
+p {
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useHistory } from "react-router-dom";
 import { addStyles, EditableMathField } from "react-mathquill";
-import firebase from "firebase";
-import firebaseConfig from "../config";
-
-firebase.initializeApp(firebaseConfig);
+import firebase from "../../config";
 
 var database = firebase.database();
 
 addStyles();
 
 const Math = props => {
-  const [text, setText] = useState("");
+  const [question, setQuestion] = useState("");
   const location = useLocation();
-
+  let history = useHistory();
+  let chapter = location.ChapterState;
+  let type = location.TypeState;
   useEffect(() => {
-    console.log("selected >>", location.state);
+    location.ChapterState === undefined && history.push("/");
   }, []);
 
   const save = () => {
+    console.log("question>>", question);
     var cls = database.ref(`${location.state}/`);
     cls.push({
-      question: text
+      question,
+      chapter,
+      type
     });
     alert("save data");
+    location.ChapterState === undefined && history.push("/");
   };
 
   return (
@@ -34,12 +37,18 @@ const Math = props => {
       <br />
       <EditableMathField
         style={{ width: 400, height: 200 }}
-        onChange={mathField => setText(mathField.latex())}
+        onChange={mathField => setQuestion(mathField.latex())}
       />
       <br />
       <div className="btns">
         <button className="btn btn-outline-success" onClick={() => save()}>
           Save
+        </button>
+        <button
+          className="btn btn-outline-warning"
+          onClick={() => history.goBack()}
+        >
+          Back
         </button>
         <Link to="/">
           <button className="btn btn-outline-primary">Home</button>
