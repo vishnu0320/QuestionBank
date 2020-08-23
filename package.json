@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "main": "electron/main.js",
-  "homepage": "https://vishnu0320.github.io/qbank",
+  "homepage": "https://vishnu0320.github.io/QuestionBank",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
