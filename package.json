@@ -18,7 +18,7 @@
     "react-mathjax2": "0.0.2",
     "react-mathquill": "^0.2.4",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
+    "react-scripts": "3.4.4",
     "react-to-pdf": "0.0.10"
   },
   "build": {
